@@ -1,6 +1,7 @@
 package com.codepath.campgrounds
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -56,9 +57,13 @@ class CampgroundAdapter(
 
         override fun onClick(v: View?) {
             // TODO: Get selected campground
+            val campground = campgrounds[absoluteAdapterPosition]
 
 
             // TODO: Navigate to Details screen and pass selected campground
+            val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra(CAMPGROUND_EXTRA, campground)
+            context.startActivity(intent)
 
         }
     }
