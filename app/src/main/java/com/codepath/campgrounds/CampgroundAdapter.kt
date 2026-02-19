@@ -24,7 +24,7 @@ class CampgroundAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        // TODO: Get the individual campground and bind to holder
+        // Get the individual campground and bind to holder
         val campground = campgrounds[position]
         holder.bind(campground)
     }
@@ -34,7 +34,7 @@ class CampgroundAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
 
-        // TODO: Create member variables for any view that will be set
+        // Create member variables for any view that will be set
         private val nameTextView = itemView.findViewById<TextView>(R.id.campgroundName)
         private val descriptionTextView = itemView.findViewById<TextView>(R.id.campgroundDescription)
         private val locationTextView = itemView.findViewById<TextView>(R.id.campgroundLocation)
@@ -45,7 +45,7 @@ class CampgroundAdapter(
         }
 
         fun bind(campground: Campground) {
-            // TODO: Set item views based on views and data model
+            // Set item views based on views and data model
             nameTextView.text = campground.name
             descriptionTextView.text = campground.description
             locationTextView.text = campground.latLong
@@ -56,11 +56,11 @@ class CampgroundAdapter(
         }
 
         override fun onClick(v: View?) {
-            // TODO: Get selected campground
+            // Get selected campground
             val campground = campgrounds[absoluteAdapterPosition]
 
 
-            // TODO: Navigate to Details screen and pass selected campground
+            // Navigate to Details screen and pass selected campground
             val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra(CAMPGROUND_EXTRA, campground)
             context.startActivity(intent)
